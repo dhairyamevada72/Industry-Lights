@@ -129,6 +129,49 @@ header {
     }
 }
 
+.master-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.btn-secondary {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 77, 77, 0.1);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
 .control-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

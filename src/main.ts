@@ -102,6 +102,22 @@ function updateTelemetry() {
 
 // Initial Setup
 createLightCards();
+
+const allOnBtn = document.getElementById('all-on') as HTMLButtonElement;
+const allOffBtn = document.getElementById('all-off') as HTMLButtonElement;
+
+allOnBtn.addEventListener('click', () => {
+    for (let i = 1; i <= 8; i++) {
+        set(ref(db, `lights/light_${i}`), 1);
+    }
+});
+
+allOffBtn.addEventListener('click', () => {
+    for (let i = 1; i <= 8; i++) {
+        set(ref(db, `lights/light_${i}`), 0);
+    }
+});
+
 onValue(ref(db, '.info/connected'), (snapshot) => {
     if (snapshot.val() === true) {
         dbStatus.innerText = "Online";
