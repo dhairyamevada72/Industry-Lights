@@ -1,41 +1,38 @@
-# IndustryLights Industrial Automation
+# AUM CONTROLS & EQUIPMENTS - Industrial Dashboard
 
-This project implements a smart industrial control dashboard for ESP32 (WROOM 32D) using Firebase Realtime Database.
+Professional 8-channel light automation dashboard for ESP32-WROOM-32D.
 
-## 🚀 Features
-- **Premium UI**: Glassmorphism design with industrial aesthetics.
-- **Bi-directional Control**: Toggle LED and Fan from the web and see real-time updates.
-- **Telemetry**: Simulated real-time sensors (Temperature, Humidity, Power).
-- **Responsive**: Works on mobile and desktop.
+## 🚀 Deployment Instructions for Netlify
 
-## 🛠️ Setup Instructions
+Since this is a **Vite + TypeScript** project, you cannot simply drag and drop the folder. You must follow these steps to see the styles and logic correctly:
 
-### 1. Firebase Configuration
-1. Go to your [Firebase Console](https://console.firebase.google.com/).
-2. Select your project **industrylights**.
-3. Go to **Realtime Database** > **Rules**.
-4. Copy the content of `Firebase_Rules.json` and publish.
-   ```json
-   {
-     "rules": {
-       ".read": "true",
-       ".write": "true"
-     }
-   }
-   ```
-5. Note: For production, use more restrictive rules.
+### 1. Link to GitHub (Recommended)
+1. Go to your [Netlify Dashboard](https://app.netlify.com/).
+2. Click **Add new site** > **Import an existing project**.
+3. Select **GitHub** and authorize.
+4. Choose the `Industry-Lights` repository.
+5. **Set Build Settings**:
+   - **Build Command:** `npm run build`
+   - **Publish Directory:** `dist`
+6. **Set Environment Variables**:
+   - Go to **Site Settings** > **Environment variables**.
+   - Add all variables from your `.env` file (e.g., `VITE_FIREBASE_API_KEY`, etc.).
+7. Click **Deploy site**.
 
-### 2. ESP32 (WROOM 32D)
-1. Open `esp32_code/esp32_code.ino` in Arduino IDE.
-2. Install the **Firebase ESP Client** library by Mobizt.
-3. Update `WIFI_SSID` and `WIFI_PASSWORD` in the code.
-4. Select board **DOIT ESP32 DEVKIT V1** or similar.
-5. Upload the code.
+### 2. Manual Build (Drag and Drop)
+If you prefer dragging and dropping:
+1. Run `npm install` in your local terminal.
+2. Run `npm run build`.
+3. This will create a folder named **`dist`**.
+4. Drag and drop **ONLY the `dist` folder** into Netlify.
 
-### 3. Web Dashboard
-1. Open `index.html` in your browser.
-2. Use the toggles to control your ESP32.
-3. Watch the fan rotate and the LED status update in real-time.
+## 🛠️ Tech Stack
+- **Frontend**: Vite, TypeScript, Vanilla CSS
+- **Database**: Firebase Realtime Database
+- **Hardware**: ESP32 WROOM 32D
 
----
-Developed for Dhairya Industrial Code.
+## 🔌 ESP32 Pin Mapping
+- Lights 1-8: GPIO `2, 4, 5, 18, 19, 21, 22, 23`
+
+## 🔐 Security
+Your API keys and WiFi secrets are stored in `.env` and `esp32_code/secrets.h`. These files are ignored by Git to keep your data safe.
