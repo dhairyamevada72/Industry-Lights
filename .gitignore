@@ -68,3 +68,6 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+
+# ESP32 Secrets
+esp32_code/secrets.h

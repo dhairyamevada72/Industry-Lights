@@ -13,14 +13,13 @@
 // Provide the RTDB payload printing info.
 #include "addons/RTDBHelper.h"
 
+#include "secrets.h"
+
 // 1. Define WiFi credentials
-#define WIFI_SSID "YOUR_WIFI_SsiSID"
-#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+// (Already defined in secrets.h)
 
 // 2. Define Firebase API Key and RTDB URL
-#define API_KEY "AIzaSyDMRmn-8d_Ippfte47ENlGUF9ZWyDkVeOo"
-#define DATABASE_URL "https://industrylights-default-rtdb.firebaseio.com"
-#define DATABASE_SECRET "KcAh0mzFosJYcjBX9iC2gGhbtsrbzUj53VnkMzd4"
+// (Already defined in secrets.h)
 
 // Define Pins for 8 Lights
 const int lightPins[8] = {2, 4, 5, 18, 19, 21, 22, 23};
